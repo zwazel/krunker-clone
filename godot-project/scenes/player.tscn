@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
+[ext_resource path="res://scripts/player/playerCamera.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -12,6 +13,7 @@ points = PoolVector3Array( -0.976555, -0.115531, 0.676252, -0.97477, 0.129786, 0
 
 [node name="KinematicBody" type="KinematicBody"]
 script = ExtResource( 1 )
+head = NodePath("Camera")
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
@@ -23,5 +25,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
+pause_mode = 2
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 1.4, 0 )
 fov = 100.0
+script = ExtResource( 2 )
