@@ -22,5 +22,5 @@ func _process(delta):
 	if far != Global.playerViewDistance:
 		far = Global.playerViewDistance
 
-func _on_KinematicBody_aim(state):
+func _on_Player_aim(state):
 	aim = state;
