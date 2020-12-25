@@ -8,11 +8,11 @@ points = PoolVector3Array( -0.972919, -0.165547, -1.63882, -0.972305, -0.215854,
 
 [node name="Player" type="KinematicBody"]
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="BodyMesh" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="BodyCollision" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 2 )
