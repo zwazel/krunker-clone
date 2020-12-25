@@ -20,6 +20,8 @@ var isOnFloor;
 var dir = Vector3();
 var vel = Vector3();
 
+signal aim;
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
 	
@@ -64,6 +66,11 @@ func input_walking():
 		input_movement_vector.x -= 1
 	if Input.is_action_pressed("moveRight"):
 		input_movement_vector.x += 1
+	
+	if Input.is_action_just_pressed("rightMouse"):
+		emit_signal("aim", true);
+	if Input.is_action_just_released("rightMouse"):
+		emit_signal("aim", false);
 
 	input_movement_vector = input_movement_vector.normalized()
 
